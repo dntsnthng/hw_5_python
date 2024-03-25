@@ -2,11 +2,10 @@ import os.path
 
 
 
-from selene import browser, be, have, command
-
+from selene import browser, have
 
 def test_web():
-    browser.open('https://demoqa.com/automation-practice-form')
+    browser.open('/automation-practice-form')
     browser.element('#firstName').set_value("Dima")
     browser.element('#lastName').set_value("Botkin")
     browser.element('[for="gender-radio-1"]').click()
@@ -24,17 +23,17 @@ def test_web():
     browser.element('#react-select-4-input').type('delhi').press_enter()
     browser.element('#submit').click()
 
-    browser.element('[class="modal-content"]').should(have.text('Dima Botkin'))
-    browser.element('[class="modal-content"]').should(have.text('sobaka@mail.com'))
-    browser.element('[class="modal-content"]').should(have.text('Male'))
-    browser.element('[class="modal-content"]').should(have.text('8800555353'))
-    browser.element('[class="modal-content"]').should(have.text('26 January,1991'))
-    browser.element('[class="modal-content"]').should(have.text('Math'))
-    browser.element('[class="modal-content"]').should(have.text('Sports'))
-    browser.element('[class="modal-content"]').should(have.text('l3.jpg'))
-    browser.element('[class="modal-content"]').should(have.text('usa'))
-    browser.element('[class="modal-content"]').should(have.text('NCR Delhi'))
-    browser.element('[class="modal-content"]').should(have.text('Thanks for submitting the form'))
+    browser.element('.modal-content').should(have.text('Dima Botkin'))
+    browser.element('.modal-content').should(have.text('sobaka@mail.com'))
+    browser.element('.modal-content').should(have.text('Male'))
+    browser.element('.modal-content').should(have.text('8800555353'))
+    browser.element('.modal-content').should(have.text('26 January,1991'))
+    browser.element('.modal-content').should(have.text('Math'))
+    browser.element('.modal-content').should(have.text('Sports'))
+    browser.element('.modal-content').should(have.text('l3.jpg'))
+    browser.element('.modal-content').should(have.text('usa'))
+    browser.element('.modal-content').should(have.text('NCR Delhi'))
+    browser.element('.modal-content').should(have.text('Thanks for submitting the form'))
 
 
 
